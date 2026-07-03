@@ -6,7 +6,7 @@ Berikut README yang sudah diterjemahkan ke Bahasa Indonesia:
 Demonstrasi sederhana *finite state machine* (FSM) yang diimplementasikan di Godot (GDScript) dengan fitur pemain dan NPC musuh. Musuh merespons kedekatan pemain dengan berpindah antara tiga perilaku: **Diam (mengembara)**, **Mengikuti**, dan **Menyerang**.
 
 ---
-**Demo Langsung**: [Coba di sini](https://ucfx.github.io/godot-fsm-example/)
+**Demo Langsung**: [Coba di sini](https://den14ditya.itch.io/fsm-with-godot)
 
 ---
 
@@ -65,7 +65,7 @@ Diagram visual:
 ## Cara Menjalankan
 1. Clone repositori:
    ```bash
-   git clone https://github.com/ucfx/godot-fsm-example.git
+   git clone https://github.com/Den1Adtya/FSM-With-GODOT.git
    ```
 2. Buka proyek di Godot (3.x atau 4.x, tergantung pengaturan kamu).
 3. Muat scene `Level.tscn`.
