@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dg8cmclp6mljp"]
+
+[ext_resource type="Script" uid="uid://dvpbuyxofhb0a" path="res://game_over.gd" id="1_40baj"]
+
+[node name="GameOver" type="Control" unique_id=1700302922]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_40baj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1902870558]
+layout_mode = 0
+offset_right = 1922.0
+offset_bottom = 1087.0
+color = Color(0.07058824, 0.07058824, 0.07058824, 0.8039216)
+
+[node name="Label" type="Label" parent="." unique_id=624351452]
+layout_mode = 0
+offset_left = 733.0
+offset_top = 323.0
+offset_right = 1200.0
+offset_bottom = 454.0
+theme_override_font_sizes/font_size = 77
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="." unique_id=1771214256]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 455.0
+offset_right = 1077.0
+offset_bottom = 537.0
+theme_override_colors/font_hover_color = Color(0.5568628, 0.2, 0.23137255, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.5568628, 0.2, 0.23137255, 1)
+theme_override_colors/icon_hover_color = Color(0.5568628, 0.2, 0.23137255, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.5568628, 0.2, 0.23137255, 1)
+theme_override_font_sizes/font_size = 54
+text = "Restart"

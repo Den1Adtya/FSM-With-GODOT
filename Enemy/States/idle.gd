@@ -6,10 +6,13 @@ var move_speed = 50
 
 @export var enemy: CharacterBody2D
 var player: CharacterBody2D
+var anim: AnimatedSprite2D
 
 func Enter() -> void:
 	player = get_tree().get_first_node_in_group("Player")
-	enemy.modulate = Color("yellow")
+	anim = enemy.get_node("AnimatedSprite2D")
+	enemy.modulate = Color.WHITE   # Warna normal
+	anim.play("Idle")
 	randomize_wander()
 
 func randomize_wander():
@@ -23,11 +26,14 @@ func Update(delta: float):
 		wander_time -= delta
 	else:
 		randomize_wander()
-	
 
 func PhysicsUpdate(_delta: float):
 	if enemy:
 		enemy.velocity = move_direction * move_speed
+
+	if not is_instance_valid(player):
+		return
+
 	var dir = player.global_position - enemy.global_position
-	if dir.length() < 100:
+	if dir.length() < 150:
 		Transitioned.emit(self, "follow")

@@ -1,68 +1,83 @@
-[gd_scene load_steps=5 format=3 uid="uid://la16spnrnd1b"]
+[gd_scene format=3 uid="uid://la16spnrnd1b"]
 
 [ext_resource type="PackedScene" uid="uid://dri8od50aoatv" path="res://Player/player.tscn" id="1_t7iv1"]
 [ext_resource type="PackedScene" uid="uid://cil2tj1i7s3e6" path="res://Enemy/enemy.tscn" id="2_2nifc"]
+[ext_resource type="Texture2D" uid="uid://dn1wwgheacst4" path="res://Enemy/States/BackgroundGame.png" id="17_dcckh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q2vmi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7iv1"]
-size = Vector2(15.625, 516)
+size = Vector2(71, 1020.9375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2nifc"]
-size = Vector2(665, 20)
+size = Vector2(1921.5156, 48)
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" unique_id=1108032549]
 
-[node name="Enemy" parent="." instance=ExtResource("2_2nifc")]
-position = Vector2(212, 253)
+[node name="Enemy" parent="." unique_id=1795009404 instance=ExtResource("2_2nifc")]
+position = Vector2(-133, 311)
 
-[node name="Player" parent="." instance=ExtResource("1_t7iv1")]
-position = Vector2(407, 254)
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Enemy" unique_id=286242119]
+position = Vector2(0, 1)
+scale = Vector2(0.11745011, 0.105630055)
+sprite_frames = SubResource("SpriteFrames_q2vmi")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Player" parent="." unique_id=361110566 instance=ExtResource("1_t7iv1")]
+position = Vector2(416, 288)
+
+[node name="CollisionShape2D" parent="Player" index="0" unique_id=693779500]
+position = Vector2(-4.7683716e-07, -9.536743e-07)
+scale = Vector2(2.1629322, -2.1303174)
+
+[node name="AnimatedSprite2D" parent="Player" index="1" unique_id=1922410042]
+position = Vector2(7.688999e-06, -7.6293945e-06)
+scale = Vector2(0.104956284, 0.10620155)
+animation = &"Walk"
+frame_progress = 0.0
+
+[node name="BarBackground" parent="Player/HealthBarContainer" parent_id_path=PackedInt32Array(361110566, 550342232) index="0" unique_id=741997391]
+offset_top = -80.0
+offset_bottom = -72.0
+
+[node name="BarFill" parent="Player/HealthBarContainer" parent_id_path=PackedInt32Array(361110566, 550342232) index="1" unique_id=527495091]
+offset_top = -81.0
+offset_bottom = -73.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1296024375]
+position = Vector2(-39, 106)
 collision_layer = 4
 collision_mask = 3
 
-[node name="Environment" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0.1875, 238)
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=2131957992]
+z_index = -12
+position = Vector2(1000.99994, 433.5)
+scale = Vector2(1.3636363, 1.4049479)
+texture = ExtResource("17_dcckh")
+
+[node name="Environment" type="CollisionShape2D" parent="StaticBody2D" unique_id=481575267]
+position = Vector2(170.5, 303.53125)
 shape = SubResource("RectangleShape2D_t7iv1")
 
-[node name="Environment2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(639.875, 238)
+[node name="Environment2" type="CollisionShape2D" parent="StaticBody2D" unique_id=2030254363]
+position = Vector2(1771, 362.5)
 shape = SubResource("RectangleShape2D_t7iv1")
 
-[node name="Environment3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(322.5, -2)
+[node name="Environment3" type="CollisionShape2D" parent="StaticBody2D" unique_id=366011049]
+position = Vector2(851.2422, 17)
 shape = SubResource("RectangleShape2D_2nifc")
 
-[node name="Environment4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(322.5, 482)
+[node name="Environment4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1926968713]
+position = Vector2(954.8281, 826)
 shape = SubResource("RectangleShape2D_2nifc")
 
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
-offset_left = -8.0
-offset_top = -20.0
-offset_right = 8.0
-offset_bottom = 494.0
-color = Color(0.20033, 0.20033, 0.20033, 1)
+[node name="Enemy2" parent="." unique_id=1012708024 instance=ExtResource("2_2nifc")]
+position = Vector2(-207, -96)
 
-[node name="ColorRect2" type="ColorRect" parent="StaticBody2D"]
-offset_left = 632.0
-offset_top = -20.0
-offset_right = 648.0
-offset_bottom = 494.0
-color = Color(0.20033, 0.20033, 0.20033, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="StaticBody2D"]
-offset_left = -7.0
-offset_top = -12.0
-offset_right = 655.0
-offset_bottom = 8.0
-color = Color(0.20033, 0.20033, 0.20033, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="StaticBody2D"]
-offset_left = -7.0
-offset_top = 472.0
-offset_right = 655.0
-offset_bottom = 492.0
-color = Color(0.20033, 0.20033, 0.20033, 1)
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Enemy2" unique_id=417842097]
+position = Vector2(0, 2)
+scale = Vector2(0.11745011, 0.105630055)
+sprite_frames = SubResource("SpriteFrames_q2vmi")
 
 [connection signal="child_entered_tree" from="StaticBody2D" to="." method="_on_static_body_2d_child_entered_tree"]
+
+[editable path="Player"]

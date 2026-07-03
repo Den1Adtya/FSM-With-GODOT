@@ -8,22 +8,25 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
-config/name="godot-fsm-example"
+config/name="Godot_FSM_Final"
 run/main_scene="uid://la16spnrnd1b"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=480
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/resizable=false
-window/size/window_width_override=640
-window/size/window_height_override=480
-window/stretch/mode="viewport"
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 
 [global_group]
 
@@ -69,4 +72,5 @@ down={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
